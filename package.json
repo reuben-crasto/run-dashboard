@@ -2,13 +2,17 @@
   "name": "running-dashboard",
   "private": true,
   "version": "0.1.0",
-  "description": "Personal Strava running dashboard — monorepo root",
+  "type": "module",
+  "description": "Personal Strava running dashboard",
   "scripts": {
-    "dev": "concurrently -n server,client -c blue,magenta \"npm:dev:server\" \"npm:dev:client\"",
-    "dev:server": "npm --prefix server run dev",
+    "build": "npm --prefix client install && npm --prefix client run build",
+    "dev": "concurrently -n api,client -c blue,magenta \"vercel dev --listen 3000\" \"npm:dev:client\"",
     "dev:client": "npm --prefix client run dev",
-    "install:all": "npm install && npm --prefix server install && npm --prefix client install",
-    "build:client": "npm --prefix client run build"
+    "install:all": "npm install && npm --prefix client install"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.103.3",
+    "axios": "^1.7.9"
   },
   "devDependencies": {
     "concurrently": "^9.1.0"

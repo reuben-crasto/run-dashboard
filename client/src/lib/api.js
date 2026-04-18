@@ -19,3 +19,16 @@ export async function getRecords() {
   const { data } = await api.get('/api/records');
   return data;
 }
+
+// ── Run logs (Supabase via server proxy) ──────────────────────────────────────
+export async function getRunLogs(activityIds) {
+  if (!activityIds || activityIds.length === 0) return [];
+  const { data } = await api.get('/api/run-logs', {
+    params: { activity_ids: activityIds.join(',') },
+  });
+  return data;
+}
+export async function saveRunLog(payload) {
+  const { data } = await api.post('/api/run-logs', payload);
+  return data;
+}

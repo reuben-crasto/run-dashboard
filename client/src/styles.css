@@ -118,3 +118,59 @@ button[aria-pressed="true"] {
 .detail-header .stat b { color: var(--text); font-weight: 500; }
 
 .empty-state { color: var(--text-dim); font-family: var(--font-mono); font-size: 13px; padding: 24px; text-align: center; }
+
+/* ── Run-row: now a div (button inside anchor is invalid HTML) ── */
+.run-row { cursor: pointer; }
+.run-row { display: grid; grid-template-columns: 110px 1fr 80px 90px 80px 36px; gap: 12px; padding: 10px 8px; border-radius: 4px; border: 1px solid transparent; align-items: center; }
+.run-row:hover { border-color: var(--border); background: #111; }
+.log-cell  { display: flex; align-items: center; justify-content: center; }
+.log-check { color: var(--good); font-size: 14px; font-weight: 700; }
+.log-btn   { padding: 2px 6px; font-size: 14px; border-color: var(--border); border-radius: 3px; line-height: 1; color: var(--text-dim); }
+.log-btn:hover { color: var(--accent); border-color: var(--accent); }
+
+/* ── Pacing verdict ── */
+.pacing-verdict { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--border); }
+.verdict-tags   { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+.verdict-tag    { font-family: var(--font-mono); font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.08em; }
+.verdict-good   { background: rgba(0,255,135,0.12); color: var(--good); }
+.verdict-warn   { background: rgba(255,184,0,0.12); color: var(--warn); }
+.verdict-bad    { background: rgba(255,77,77,0.12);  color: var(--bad); }
+.verdict-text   { margin: 0; color: var(--text-dim); font-size: 13px; line-height: 1.6; }
+
+/* ── Weekly load ── */
+.weekly-load  { display: flex; flex-direction: column; gap: 12px; }
+.wl-stats     { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+@media (max-width: 700px) { .wl-stats { grid-template-columns: repeat(2, 1fr); } }
+.wl-stat      { background: #111; border: 1px solid var(--border); border-radius: 4px; padding: 12px; }
+.wl-label     { font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+.wl-value     { font-family: var(--font-mono); font-size: 20px; font-weight: 700; }
+.wl-sub       { font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); margin-top: 4px; }
+.wl-warning   { background: rgba(255,77,77,0.08); border: 1px solid rgba(255,77,77,0.3); border-radius: 4px; padding: 10px 14px; color: var(--bad); font-size: 13px; font-family: var(--font-mono); }
+
+/* ── Modal ── */
+.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); display: flex; align-items: center; justify-content: center; z-index: 100; padding: 24px; }
+.modal         { background: var(--bg-raised); border: 1px solid var(--border); border-radius: 8px; width: 100%; max-width: 480px; max-height: 90vh; overflow-y: auto; padding: 24px; }
+.modal-header  { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
+.modal-title   { font-size: 16px; font-weight: 700; }
+.modal-subtitle{ font-family: var(--font-mono); font-size: 12px; color: var(--text-dim); margin-top: 4px; }
+.modal-close   { background: none; border: none; color: var(--text-dim); font-size: 16px; padding: 0; cursor: pointer; }
+.modal-close:hover { color: var(--text); }
+
+/* ── Log form ── */
+.log-form      { display: flex; flex-direction: column; gap: 20px; }
+.dot-field     { display: flex; flex-direction: column; gap: 8px; }
+.dot-field-label { font-size: 13px; font-weight: 500; }
+.dot-field-sub { color: var(--text-dim); font-family: var(--font-mono); font-size: 11px; font-weight: 400; }
+.dot-row       { display: flex; gap: 8px; }
+.dot-btn       { width: 36px; height: 36px; border-radius: 50%; font-family: var(--font-mono); font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; padding: 0; }
+.dot-btn--active { background: var(--accent); color: #000; border-color: var(--accent); }
+.emoji-row     { display: flex; gap: 8px; flex-wrap: wrap; }
+.emoji-btn     { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 10px 14px; border-radius: 4px; }
+.emoji-btn--active { background: var(--accent); color: #000; border-color: var(--accent); }
+.emoji-icon    { font-size: 22px; line-height: 1; }
+.emoji-label   { font-size: 11px; font-family: var(--font-mono); }
+.log-notes     { background: var(--bg); border: 1px solid var(--border); border-radius: 4px; color: var(--text); font-family: var(--font-ui); font-size: 13px; padding: 10px; resize: vertical; width: 100%; }
+.log-notes:focus { outline: none; border-color: var(--accent); }
+.log-error     { color: var(--bad); font-family: var(--font-mono); font-size: 12px; }
+.log-submit    { background: var(--accent); color: #000; border: none; padding: 12px; font-weight: 700; font-family: var(--font-ui); border-radius: 4px; font-size: 14px; }
+.log-submit:disabled { opacity: 0.5; cursor: not-allowed; }

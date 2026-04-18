@@ -3,6 +3,7 @@ import express from 'express';
 import cors from 'cors';
 import authRouter from './routes/auth.js';
 import apiRouter from './routes/api.js';
+import runLogsRouter from './routes/runLogs.js';
 
 const app = express();
 const PORT = Number(process.env.PORT) || 3001;
@@ -15,6 +16,7 @@ app.get('/health', (req, res) => res.json({ ok: true }));
 
 app.use('/auth', authRouter);
 app.use('/api', apiRouter);
+app.use('/api/run-logs', runLogsRouter);
 
 // Centralised error handler — maps NOT_CONNECTED to 401 so the client can redirect to auth.
 app.use((err, req, res, _next) => {

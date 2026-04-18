@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import SplitsChart from '../components/SplitsChart.jsx';
+import PacingVerdict from '../components/PacingVerdict.jsx';
 import { getActivity } from '../lib/api.js';
 import { formatDate, formatKm, formatDuration, mpsToSecPerKm, formatPace } from '../lib/format.js';
 
@@ -34,6 +35,7 @@ export default function RunDetail() {
       <section className="panel">
         <h2>Pace per KM — where am I slowing down?</h2>
         <SplitsChart splits={run.splits_metric} averageSpeedMps={run.average_speed_mps} />
+        <PacingVerdict splits={run.splits_metric} averageSpeedMps={run.average_speed_mps} />
       </section>
     </>
   );
