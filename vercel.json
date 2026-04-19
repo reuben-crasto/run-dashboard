@@ -10,6 +10,7 @@
     { "src": "/api/activities/(.*)", "dest": "/api/activities/[id].js" },
     { "src": "/api/records",         "dest": "/api/records.js" },
     { "src": "/api/run-logs",        "dest": "/api/run-logs.js" },
+    { "handle": "filesystem" },
     { "src": "/(.*)",                "dest": "/" }
   ]
 }
