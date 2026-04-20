@@ -7,7 +7,7 @@
     { "src": "/api/auth/callback",   "dest": "/api/auth/callback.js" },
     { "src": "/api/status",          "dest": "/api/status.js" },
     { "src": "/api/activities",      "dest": "/api/activities.js" },
-    { "src": "/api/activities/(.*)", "dest": "/api/activities/[id].js" },
+    { "src": "/api/activities/(.*)", "dest": "/api/activities/[id].js?id=$1" },
     { "src": "/api/records",         "dest": "/api/records.js" },
     { "src": "/api/run-logs",        "dest": "/api/run-logs.js" },
     { "handle": "filesystem" },
